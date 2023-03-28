@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
@@ -24,8 +25,10 @@ import java.time.LocalDateTime;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("Register Game Provider Test")
-@DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@EnableAutoConfiguration
+@ContextConfiguration(classes= RegisterGameProvider.class)
+@DataJpaTest
 @Import({RegisterGameProvider.class})
 @Sql("RegisterGameProviderTest.sql")
 class RegisterGameProviderTest {
@@ -33,7 +36,7 @@ class RegisterGameProviderTest {
     @Autowired
     private RegisterGameProvider registerGameProvider;
 
-    @Autowired
+    @MockBean
     private GameRepository gameRepository;
 
     @DisplayName("Register Game")

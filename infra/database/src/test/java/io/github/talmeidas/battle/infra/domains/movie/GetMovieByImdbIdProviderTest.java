@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
@@ -21,6 +22,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("Get Movie By ImdbId Provider Test")
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@EnableAutoConfiguration
+@ContextConfiguration(classes= GetMovieByImdbIdProvider.class)
 @DataJpaTest
 @Import({GetMovieByImdbIdProvider.class})
 @Sql("GetMovieByImdbIdProviderTest.sql")
@@ -29,7 +32,7 @@ class GetMovieByImdbIdProviderTest {
     @Autowired
     private GetMovieByImdbIdProvider getMovieByImdbIdProvider;
 
-    @Autowired
+    @MockBean
     private MovieRepository movieRepository;
 
     @DisplayName("Get Movie By ImdbId")
