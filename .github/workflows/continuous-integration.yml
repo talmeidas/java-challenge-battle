@@ -42,14 +42,17 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Maven clean
+      - name: Maven Clean
         run: mvn clean -Dmaven.test.skip=true
 
-      - name: Maven build
+      - name: Maven Build
         run: mvn install -Dmaven.test.skip=true
 
-      - name: Run tests
+      - name: Run Tests
         run: mvn test -Dspring.profiles.active=test
+
+      - name: Run Mutation Tests
+        run: mvn test-compile org.pitest:pitest-maven:mutationCoverage -DmutationThreshold=90 -Dspring.profiles.active=test
 
       - name: Run SonarCloud Scan
         env:
