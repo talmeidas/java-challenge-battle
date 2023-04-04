@@ -42,6 +42,9 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
+      - name: Maven clean
+        run: mvn clean -Dmaven.test.skip=true
+
       - name: Maven build
         run: mvn install -Dmaven.test.skip=true
 
