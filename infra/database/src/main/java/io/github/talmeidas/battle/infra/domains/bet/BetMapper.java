@@ -6,6 +6,7 @@ import io.github.talmeidas.battle.infra.domains.quiz.QuizEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
+
 @Mapper
 public interface BetMapper {
 

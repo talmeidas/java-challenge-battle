@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import jakarta.inject.Named;
 
+
 @Named
 public class GetLocalDateImpl implements GetLocalDate {
 

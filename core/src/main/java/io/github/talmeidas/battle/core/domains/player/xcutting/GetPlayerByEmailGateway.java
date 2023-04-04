@@ -4,6 +4,7 @@ import io.github.talmeidas.battle.core.domains.player.model.Player;
 
 import java.util.Optional;
 
+
 @FunctionalInterface
 public interface GetPlayerByEmailGateway {
 

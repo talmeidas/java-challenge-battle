@@ -6,8 +6,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+
 @Repository
 public interface MovieRepository extends EntityGraphJpaRepository<MovieEntity, Long>, EntityGraphQuerydslPredicateExecutor<MovieEntity> {
 
-    Optional<MovieEntity> findByImdbIdIgnoreCase(final String ImdbId);
+    Optional<MovieEntity> findByImdbIdIgnoreCase(final String imdbId);
 }

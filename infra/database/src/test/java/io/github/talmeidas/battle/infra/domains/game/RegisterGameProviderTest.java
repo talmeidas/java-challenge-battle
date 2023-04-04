@@ -5,29 +5,19 @@ import io.github.talmeidas.battle.core.domains.game.model.Status;
 import io.github.talmeidas.battle.core.domains.player.model.Player;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+
 @DisplayName("Register Game Provider Test")
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@EnableAutoConfiguration
-@ContextConfiguration(classes= RegisterGameProvider.class)
 @DataJpaTest
 @Import({RegisterGameProvider.class})
 @Sql("RegisterGameProviderTest.sql")
@@ -36,7 +26,7 @@ class RegisterGameProviderTest {
     @Autowired
     private RegisterGameProvider registerGameProvider;
 
-    @MockBean
+    @Autowired
     private GameRepository gameRepository;
 
     @DisplayName("Register Game")

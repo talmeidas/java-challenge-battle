@@ -1,10 +1,10 @@
 package io.github.talmeidas.battle.entrypoint.rest.domains.quiz.request;
 
-import io.github.talmeidas.battle.entrypoint.rest.common.WebRequest;
-import io.github.talmeidas.battle.entrypoint.rest.common.metric.LogExecutionTime;
 import io.github.talmeidas.battle.core.domains.quiz.model.Quiz;
 import io.github.talmeidas.battle.core.domains.quiz.usecase.RequestQuizCommand;
 import io.github.talmeidas.battle.core.domains.quiz.usecase.RequestQuizUseCase;
+import io.github.talmeidas.battle.entrypoint.rest.common.WebRequest;
+import io.github.talmeidas.battle.entrypoint.rest.common.metric.LogExecutionTime;
 import io.github.talmeidas.battle.entrypoint.rest.domains.quiz.QuizPresenter;
 import io.github.talmeidas.battle.entrypoint.rest.domains.quiz.QuizResponse;
 import lombok.RequiredArgsConstructor;
@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
  * - Calls the use case
  * - Maps the output of the use case back to HTTP Returns an HTTP response
  */
+
 
 @RequiredArgsConstructor
 @RestController

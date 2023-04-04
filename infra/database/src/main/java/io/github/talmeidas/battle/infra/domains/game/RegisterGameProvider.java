@@ -7,12 +7,13 @@ import org.mapstruct.factory.Mappers;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
 @RequiredArgsConstructor
 @Transactional
 @Service
 public class RegisterGameProvider implements RegisterGameGateway {
 
-    private final GameMapper gameMapper = Mappers.getMapper(GameMapper.class);
+    private static final GameMapper gameMapper = Mappers.getMapper(GameMapper.class);
     
     private final GameRepository gameRepository;
 

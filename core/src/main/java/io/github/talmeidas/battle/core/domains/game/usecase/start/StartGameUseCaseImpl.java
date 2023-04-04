@@ -1,13 +1,13 @@
 package io.github.talmeidas.battle.core.domains.game.usecase.start;
 
 import io.github.talmeidas.battle.core.common.GetLocalDateTime;
+import io.github.talmeidas.battle.core.domains.game.xcutting.GetGameByPlayerIdAndStatusGateway;
 import io.github.talmeidas.battle.core.domains.game.model.Game;
 import io.github.talmeidas.battle.core.domains.game.model.Status;
-import io.github.talmeidas.battle.core.domains.game.xcutting.GetGameByPlayerIdAndStatusGateway;
 import io.github.talmeidas.battle.core.domains.player.model.Player;
-import io.github.talmeidas.battle.core.domains.player.usecase.RegisterPlayerCommand;
-import io.github.talmeidas.battle.core.domains.player.usecase.RegisterPlayerUseCase;
 import io.github.talmeidas.battle.core.domains.player.xcutting.GetPlayerByEmailGateway;
+import io.github.talmeidas.battle.core.domains.player.usecase.RegisterPlayerUseCase;
+import io.github.talmeidas.battle.core.domains.player.usecase.RegisterPlayerCommand;
 import io.github.talmeidas.battle.core.exception.InvalidActionException;
 import lombok.RequiredArgsConstructor;
 
@@ -22,6 +22,7 @@ import java.util.Optional;
  * - Manipulates the model state
  * - Returns output
  */
+
 
 @Named
 @RequiredArgsConstructor

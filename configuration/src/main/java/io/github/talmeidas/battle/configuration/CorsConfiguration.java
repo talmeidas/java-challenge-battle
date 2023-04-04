@@ -6,6 +6,7 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+
 @Component
 public class CorsConfiguration implements Filter {
 

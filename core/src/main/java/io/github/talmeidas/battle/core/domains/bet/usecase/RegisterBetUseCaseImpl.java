@@ -8,10 +8,10 @@ import io.github.talmeidas.battle.core.domains.game.xcutting.GetGameByPlayerIdAn
 import io.github.talmeidas.battle.core.domains.game.xcutting.GetUnansweredQuizzesByGateway;
 import io.github.talmeidas.battle.core.domains.movie.model.Movie;
 import io.github.talmeidas.battle.core.domains.movie.xcutting.GetMovieByImdbIdGateway;
+import io.github.talmeidas.battle.core.domains.player.xcutting.GetPlayerByEmailGateway;
 import io.github.talmeidas.battle.core.domains.player.model.Player;
 import io.github.talmeidas.battle.core.domains.player.usecase.RegisterPlayerCommand;
 import io.github.talmeidas.battle.core.domains.player.usecase.RegisterPlayerUseCase;
-import io.github.talmeidas.battle.core.domains.player.xcutting.GetPlayerByEmailGateway;
 import io.github.talmeidas.battle.core.domains.quiz.model.Quiz;
 import io.github.talmeidas.battle.core.exception.InvalidActionException;
 import io.github.talmeidas.battle.core.exception.NotFoundException;
@@ -29,6 +29,7 @@ import java.util.Optional;
  * - Manipulates the model state
  * - Returns output
  */
+
 
 @Named
 @RequiredArgsConstructor

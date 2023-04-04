@@ -11,7 +11,6 @@ import io.github.talmeidas.battle.core.domains.player.model.Player;
 import io.github.talmeidas.battle.core.domains.player.usecase.RegisterPlayerUseCase;
 import io.github.talmeidas.battle.core.domains.player.xcutting.GetPlayerByEmailGateway;
 import io.github.talmeidas.battle.core.domains.quiz.model.Quiz;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -23,6 +22,7 @@ import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
+
 
 @DisplayName("Request Quiz Use Case Test")
 class RequestQuizUseCaseTest {
@@ -44,8 +44,8 @@ class RequestQuizUseCaseTest {
                     registerPlayerUseCase,
                     getGameByPlayerIdAndStatusGateway,
                     getUnansweredQuizzesByGateway,
-                    getRandomMovieGateway,
                     getAllMoviesCountGateway,
+                    getRandomMovieGateway,
                     getAllQuizzesByGameIdGateway,
                     getLocalDateTime,
                     registerQuizGateway);
@@ -72,18 +72,18 @@ class RequestQuizUseCaseTest {
         assertThat(quiz).isNotNull();
         assertThat(quiz.id()).isEqualTo(1L);
 
-        Assertions.assertThat(quiz.game()).isNotNull();
-        Assertions.assertThat(quiz.game().id()).isEqualTo(1L);
-        Assertions.assertThat(quiz.game().player().id()).isEqualTo(1L);
-        Assertions.assertThat(quiz.game().player().name()).isEqualTo("John Smith");
-        Assertions.assertThat(quiz.game().player().email()).isEqualTo("john.smith.zero@xyz.com");
-        Assertions.assertThat(quiz.game().player().createdAt()).isEqualTo(LocalDateTime.parse("2020-03-12T22:04:59.123"));
-        Assertions.assertThat(quiz.game().player().updatedAt()).isEqualTo(LocalDateTime.parse("2020-03-12T22:04:59.123"));
-        Assertions.assertThat(quiz.game().status()).isEqualTo(Status.IN_PROGRESS);
-        Assertions.assertThat(quiz.game().createdAt()).isEqualTo(LocalDateTime.parse("2020-03-12T22:04:59.123"));
-        Assertions.assertThat(quiz.game().updatedAt()).isEqualTo(LocalDateTime.parse("2020-03-12T22:04:59.123"));
+        assertThat(quiz.game()).isNotNull();
+        assertThat(quiz.game().id()).isEqualTo(1L);
+        assertThat(quiz.game().player().id()).isEqualTo(1L);
+        assertThat(quiz.game().player().name()).isEqualTo("John Smith");
+        assertThat(quiz.game().player().email()).isEqualTo("john.smith.zero@xyz.com");
+        assertThat(quiz.game().player().createdAt()).isEqualTo(LocalDateTime.parse("2020-03-12T22:04:59.123"));
+        assertThat(quiz.game().player().updatedAt()).isEqualTo(LocalDateTime.parse("2020-03-12T22:04:59.123"));
+        assertThat(quiz.game().status()).isEqualTo(Status.IN_PROGRESS);
+        assertThat(quiz.game().createdAt()).isEqualTo(LocalDateTime.parse("2020-03-12T22:04:59.123"));
+        assertThat(quiz.game().updatedAt()).isEqualTo(LocalDateTime.parse("2020-03-12T22:04:59.123"));
 
-        Assertions.assertThat(quiz.bet()).isNull();
+        assertThat(quiz.bet()).isNull();
         assertThat(quiz.optionOneId()).isEqualTo("tt0111161");
         assertThat(quiz.optionOneTitle()).isEqualTo("The Shawshank Redemption");
         assertThat(quiz.optionOneYear()).isEqualTo("1994");

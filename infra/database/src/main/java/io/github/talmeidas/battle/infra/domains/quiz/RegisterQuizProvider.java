@@ -7,12 +7,13 @@ import org.mapstruct.factory.Mappers;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
 @RequiredArgsConstructor
 @Transactional
 @Service
 public class RegisterQuizProvider implements RegisterQuizGateway {
 
-    private final QuizMapper quizMapper = Mappers.getMapper(QuizMapper.class);
+    private static final QuizMapper quizMapper = Mappers.getMapper(QuizMapper.class);
     
     private final QuizRepository quizRepository;
 

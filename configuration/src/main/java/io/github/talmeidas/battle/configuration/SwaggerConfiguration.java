@@ -18,14 +18,14 @@ public class SwaggerConfiguration {
     public OpenAPI customOpenAPI() {
 
         final License license = new License().name("Apache License 2.0")
-                                             .url("https://raw.githubusercontent.com/jtsato/java-clean-architecture-example/master/LICENSE");
+                                             .url("https://raw.githubusercontent.com/talmeidas/java-clean-architecture-example/master/LICENSE");
 
         final String title = String.format("%s API", StringUtils.capitalize("Battle"));
 
         final Info info = new Info().title(title)
                                     .version("v1")
                                     .description("Battle")
-                                    .termsOfService("https://jtsato.github.io/terms-conditions.html")
+                                    .termsOfService("https://talmeidas.github.io/terms-conditions.html")
                                     .license(license);
 
         final String securitySchemeName = "Token";

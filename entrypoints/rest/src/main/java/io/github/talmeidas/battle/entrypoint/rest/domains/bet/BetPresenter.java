@@ -4,6 +4,7 @@ import io.github.talmeidas.battle.core.domains.bet.model.Bet;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
+
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class BetPresenter {
 

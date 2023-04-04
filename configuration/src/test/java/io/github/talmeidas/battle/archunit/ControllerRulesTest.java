@@ -15,6 +15,7 @@ import static com.tngtech.archunit.core.domain.JavaMember.Predicates.declaredIn;
 import static com.tngtech.archunit.lang.conditions.ArchPredicates.are;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 
+
 @AnalyzeClasses(packagesOf = BattleApplication.class, importOptions = ImportOption.DoNotIncludeTests.class)
 public class ControllerRulesTest {
 

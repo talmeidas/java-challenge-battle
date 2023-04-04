@@ -1,12 +1,12 @@
 package io.github.talmeidas.battle.core.domains.ranking.usecase;
 
+import io.github.talmeidas.battle.core.domains.bet.model.Bet;
+import io.github.talmeidas.battle.core.domains.bet.xcutting.GetAllBetsGateway;
 import io.github.talmeidas.battle.core.domains.player.model.Player;
 import io.github.talmeidas.battle.core.domains.player.usecase.RegisterPlayerUseCase;
 import io.github.talmeidas.battle.core.domains.player.xcutting.GetPlayerByEmailGateway;
 import io.github.talmeidas.battle.core.domains.ranking.models.PlayerScore;
 import io.github.talmeidas.battle.core.domains.ranking.models.Ranking;
-import io.github.talmeidas.battle.core.domains.bet.model.Bet;
-import io.github.talmeidas.battle.core.domains.bet.xcutting.GetAllBetsGateway;
 import lombok.*;
 
 import jakarta.inject.Named;
@@ -21,6 +21,7 @@ import java.util.Map;
  * - Manipulates the model state
  * - Returns output
  */
+
 
 @Named
 @RequiredArgsConstructor

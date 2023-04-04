@@ -1,10 +1,10 @@
 package io.github.talmeidas.battle.entrypoint.rest.domains.game.start;
 
-import io.github.talmeidas.battle.entrypoint.rest.common.WebRequest;
-import io.github.talmeidas.battle.entrypoint.rest.common.metric.LogExecutionTime;
 import io.github.talmeidas.battle.core.domains.game.model.Game;
 import io.github.talmeidas.battle.core.domains.game.usecase.start.StartGameCommand;
 import io.github.talmeidas.battle.core.domains.game.usecase.start.StartGameUseCase;
+import io.github.talmeidas.battle.entrypoint.rest.common.WebRequest;
+import io.github.talmeidas.battle.entrypoint.rest.common.metric.LogExecutionTime;
 import io.github.talmeidas.battle.entrypoint.rest.domains.game.GamePresenter;
 import io.github.talmeidas.battle.entrypoint.rest.domains.game.GameResponse;
 import lombok.RequiredArgsConstructor;
@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
  * - Calls the use case
  * - Maps the output of the use case back to HTTP Returns an HTTP response
  */
+
 
 @RequiredArgsConstructor
 @RestController

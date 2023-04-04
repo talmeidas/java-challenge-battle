@@ -5,7 +5,6 @@ import io.github.talmeidas.battle.core.domains.game.model.Status;
 import io.github.talmeidas.battle.core.domains.game.usecase.start.StartGameCommand;
 import io.github.talmeidas.battle.core.domains.game.usecase.start.StartGameUseCase;
 import io.github.talmeidas.battle.core.domains.player.model.Player;
-import io.github.talmeidas.battle.entrypoint.rest.BattleApplication;
 import io.github.talmeidas.battle.entrypoint.rest.common.WebRequest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,10 +12,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -28,11 +25,11 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+
 @DisplayName("Start Game Controller Test")
 @AutoConfigureMockMvc(addFilters = false)
 @ExtendWith(SpringExtension.class)
-@WebMvcTest
-@ContextConfiguration(classes= StartGameController.class)
+@WebMvcTest(controllers = StartGameController.class)
 class StartGameControllerTest {
 
     @Autowired

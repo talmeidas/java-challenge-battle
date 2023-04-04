@@ -6,7 +6,7 @@
 * This project uses Lombok, so enable annotation processing in your IDE
 
 ## Technology Stack
-* Language: [`Java 17`](https://www.java.com/) 
+* Language: [`Java 17`](https://www.java.com/)
 * Compilation: [`Maven`](https://maven.apache.org/)
 * Framework: [`SpringBoot`](https://spring.io/projects/spring-boot)
 * Database: [`H2`](http://h2database.com/)
@@ -17,12 +17,12 @@
 * Boilerplate code reducer: [`Lombok`](https://projectlombok.org/)
 * Logging: [`SLF4J`](https://www.slf4j.org/)
 
-* Tests: 
-    * Unit Testing: [`JUnit5`](https://junit.org/junit5/docs/current/user-guide/) 
-    * Mocking: [`Mockito`](https://site.mockito.org/)
-    * Mutation: Testing [`PIT Mutation Testing`](https://pitest.org/)
-    * Code Coverage: [`Jacoco`](https://www.jacoco.org)
-    * Architecture Testing: [`ArchUnit`](https://www.archunit.org/)
+* Tests:
+  * Unit Testing: [`JUnit5`](https://junit.org/junit5/docs/current/user-guide/)
+  * Mocking: [`Mockito`](https://site.mockito.org/)
+  * Mutation: Testing [`PIT Mutation Testing`](https://pitest.org/)
+  * Code Coverage: [`Jacoco`](https://www.jacoco.org)
+  * Architecture Testing: [`ArchUnit`](https://www.archunit.org/)
 
 ## Running the application locally
 
@@ -39,34 +39,34 @@ mvn -e clean install verify
 
 ## Available Endpoints
 
-* Swagger UI: [`http://localhost:8081/swagger-ui.html`](http://localhost:8081/swagger-ui.html)
-* H2 Console: [`http://localhost:8081/h2-console`](http://localhost:8081/h2-console)
+* Swagger UI: [`http://localhost:8083/swagger-ui.html`](http://localhost:8083/swagger-ui.html)
+* H2 Console: [`http://localhost:8083/h2-console`](http://localhost:8083/h2-console)
 
 ## Usecases
 
 ### 1. Start the game
 ```
-curl -X POST "http://localhost:8081/v1/games" -H "accept: */*" -H "Accept-Language: pt_BR" -H "PlayerId: 0" -d ""
+curl -X POST "http://localhost:8083/v1/games" -H "accept: */*" -H "Accept-Language: pt_BR" -H "PlayerId: 0" -d ""
 ```
 
 ### 2. End the game
 ```
-curl -X PATCH "http://localhost:8081/v1/games" -H "accept: */*" -H "Accept-Language: pt_BR" -H "PlayerId: 0"
+curl -X PATCH "http://localhost:8083/v1/games" -H "accept: */*" -H "Accept-Language: pt_BR" -H "PlayerId: 0"
 ```
 
 ### 3. Request a quiz
 ```
-curl -X POST "http://localhost:8081/v1/quizzes" -H "accept: */*" -H "Accept-Language: pt_BR" -H "PlayerId: 0" -d ""
+curl -X POST "http://localhost:8083/v1/quizzes" -H "accept: */*" -H "Accept-Language: pt_BR" -H "PlayerId: 0" -d ""
 ```
 
 ### 4. Answer the quiz
 ```
-curl -X POST "http://localhost:8081/v1/bets" -H "accept: */*" -H "Accept-Language: pt_BR" -H "PlayerId: 0" -H "Content-Type: application/json" -d "{\"optionId\":\"tt2576852\"}"
+curl -X POST "http://localhost:8083/v1/bets" -H "accept: */*" -H "Accept-Language: pt_BR" -H "PlayerId: 0" -H "Content-Type: application/json" -d "{\"optionId\":\"tt2576852\"}"
 ```
 
 ### 5. Get the ranking
 ```
-curl -X GET "http://localhost:8081/v1/rankings" -H "accept: */*" -H "Accept-Language: pt_BR"
+curl -X GET "http://localhost:8083/v1/rankings" -H "accept: */*" -H "Accept-Language: pt_BR"
 ```
 
 ## Solution Structure

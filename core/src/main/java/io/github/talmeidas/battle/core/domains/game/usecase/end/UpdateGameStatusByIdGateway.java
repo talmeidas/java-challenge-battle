@@ -4,6 +4,7 @@ import io.github.talmeidas.battle.core.domains.game.model.Game;
 
 import java.util.Optional;
 
+
 @FunctionalInterface
 public interface UpdateGameStatusByIdGateway {
 

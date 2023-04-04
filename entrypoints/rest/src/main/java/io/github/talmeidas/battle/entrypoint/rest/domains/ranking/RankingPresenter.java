@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import java.util.Comparator;
 import java.util.List;
 
+
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class RankingPresenter {
 

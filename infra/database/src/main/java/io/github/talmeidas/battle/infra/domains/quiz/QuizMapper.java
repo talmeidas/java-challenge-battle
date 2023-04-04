@@ -7,6 +7,7 @@ import io.github.talmeidas.battle.infra.domains.game.GameMapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
+
 @Mapper(uses = {GameMapper.class})
 public interface QuizMapper {
 

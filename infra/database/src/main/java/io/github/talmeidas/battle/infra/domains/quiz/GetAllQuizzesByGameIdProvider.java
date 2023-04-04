@@ -12,13 +12,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
 @Service
 public class GetAllQuizzesByGameIdProvider implements GetAllQuizzesByGameIdGateway {
 
-    private final ListMapper<Quiz, QuizEntity> listMapper = new ListMapper<>() { };
-    private final QuizMapper quizMapper = Mappers.getMapper(QuizMapper.class);
+    private static final ListMapper<Quiz, QuizEntity> listMapper = new ListMapper<>() { };
+    private static final QuizMapper quizMapper = Mappers.getMapper(QuizMapper.class);
 
     private final QuizRepository quizRepository;
 

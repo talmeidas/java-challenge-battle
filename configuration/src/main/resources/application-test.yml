@@ -3,10 +3,20 @@ logging:
       io.github.talmeidas.battle: debug
       org.springframework.web: warn
       io.swagger.models.parameters.AbstractSerializableParameter: error
+app:
+   movies:
+      url: http://localhost:8080
+   gateway:
+      get-all-movies-count:
+         provider-classname: GetAllMoviesCountRestClientProvider
+      get-movie-by-imdb-id:
+         provider-classname: GetMovieByImdbIdRestClientProvider
+      get-random-movie:
+         provider-classname: GetRandomMovieRestClientProvider
 server:
    http2:
       enabled: true
-   port: ${PORT:8081}
+   port: ${PORT:8083}
    error:
       whitelabel:
          enabled: true
@@ -71,4 +81,3 @@ springdoc:
       path: /swagger-ui.html
    api-docs:
       path: /v3/api-docs
-

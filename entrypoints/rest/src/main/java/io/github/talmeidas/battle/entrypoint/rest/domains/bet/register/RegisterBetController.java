@@ -1,13 +1,13 @@
 package io.github.talmeidas.battle.entrypoint.rest.domains.bet.register;
 
-import io.github.talmeidas.battle.entrypoint.rest.domains.bet.BetResponse;
-import io.github.talmeidas.battle.entrypoint.rest.common.JsonConverter;
-import io.github.talmeidas.battle.entrypoint.rest.common.metric.LogExecutionTime;
 import io.github.talmeidas.battle.core.domains.bet.model.Bet;
 import io.github.talmeidas.battle.core.domains.bet.usecase.RegisterBetCommand;
 import io.github.talmeidas.battle.core.domains.bet.usecase.RegisterBetUseCase;
+import io.github.talmeidas.battle.entrypoint.rest.common.JsonConverter;
 import io.github.talmeidas.battle.entrypoint.rest.common.WebRequest;
+import io.github.talmeidas.battle.entrypoint.rest.common.metric.LogExecutionTime;
 import io.github.talmeidas.battle.entrypoint.rest.domains.bet.BetPresenter;
+import io.github.talmeidas.battle.entrypoint.rest.domains.bet.BetResponse;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.*;
  * - Calls the use case
  * - Maps the output of the use case back to HTTP Returns an HTTP response
  */
+
 
 @RequiredArgsConstructor
 @RestController

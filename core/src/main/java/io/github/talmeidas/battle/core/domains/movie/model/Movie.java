@@ -5,6 +5,7 @@ import lombok.*;
 import java.io.Serial;
 import java.io.Serializable;
 
+
 @Generated
 public record Movie(
         Long id,

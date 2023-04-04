@@ -9,12 +9,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
+
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
 @Service
 public class GetPlayerByEmailProvider implements GetPlayerByEmailGateway {
 
-    private final PlayerMapper playerMapper = Mappers.getMapper(PlayerMapper.class);
+    private static final PlayerMapper playerMapper = Mappers.getMapper(PlayerMapper.class);
     
     private final PlayerRepository playerRepository;
 

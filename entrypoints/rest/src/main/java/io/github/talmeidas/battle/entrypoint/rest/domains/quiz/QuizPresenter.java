@@ -4,6 +4,7 @@ import io.github.talmeidas.battle.core.domains.quiz.model.Quiz;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
+
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class QuizPresenter {
 

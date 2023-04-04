@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+
 @Repository
 public interface GameRepository extends EntityGraphJpaRepository<GameEntity, Long>, EntityGraphQuerydslPredicateExecutor<GameEntity> {
 

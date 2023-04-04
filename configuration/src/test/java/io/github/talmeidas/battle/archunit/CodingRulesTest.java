@@ -17,6 +17,7 @@ import com.tngtech.archunit.lang.CompositeArchRule;
 import io.github.talmeidas.battle.BattleApplication;
 import org.slf4j.Logger;
 
+
 @AnalyzeClasses(packagesOf = BattleApplication.class)
 public class CodingRulesTest {
 

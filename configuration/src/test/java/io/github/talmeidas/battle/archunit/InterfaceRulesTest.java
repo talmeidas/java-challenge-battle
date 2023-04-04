@@ -8,6 +8,7 @@ import com.tngtech.archunit.lang.ArchRule;
 
 import io.github.talmeidas.battle.BattleApplication;
 
+
 @AnalyzeClasses(packagesOf = BattleApplication.class)
 public class InterfaceRulesTest {
 

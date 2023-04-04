@@ -4,6 +4,7 @@ import io.github.talmeidas.battle.core.domains.bet.model.Bet;
 
 import java.util.List;
 
+
 @FunctionalInterface
 public interface GetAllBetsGateway {
 

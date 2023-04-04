@@ -5,6 +5,7 @@ import io.github.talmeidas.battle.core.domains.player.model.Player;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
+
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class GamePresenter {
 

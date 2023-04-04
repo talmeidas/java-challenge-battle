@@ -1,7 +1,7 @@
 package io.github.talmeidas.battle.entrypoint.rest.domains.bet.register;
 
-import io.github.talmeidas.battle.entrypoint.rest.domains.bet.BetResponse;
 import io.github.talmeidas.battle.entrypoint.rest.common.HttpStatusConstants;
+import io.github.talmeidas.battle.entrypoint.rest.domains.bet.BetResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.security.core.Authentication;
+
 
 @Tag(name = "Bets")
 @FunctionalInterface
@@ -31,5 +32,6 @@ public interface RegisterBetApiMethod {
                             @ApiResponse(responseCode = HttpStatusConstants.UNAUTHORIZED_401, description = HttpStatusConstants.UNAUTHORIZED_401_MESSAGE),
                             @ApiResponse(responseCode = HttpStatusConstants.INTERNAL_SERVER_ERROR_500,
                                             description = HttpStatusConstants.INTERNAL_SERVER_ERROR_500_MESSAGE),})
+
         BetResponse execute(final Authentication authentication, final RegisterBetRequest request);
 }

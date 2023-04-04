@@ -1,10 +1,6 @@
 package io.github.talmeidas.battle.core.domains.quiz.usecase;
 
 import io.github.talmeidas.battle.core.common.GetLocalDateTime;
-import io.github.talmeidas.battle.core.domains.player.model.Player;
-import io.github.talmeidas.battle.core.domains.player.usecase.RegisterPlayerCommand;
-import io.github.talmeidas.battle.core.domains.player.usecase.RegisterPlayerUseCase;
-import io.github.talmeidas.battle.core.domains.player.xcutting.GetPlayerByEmailGateway;
 import io.github.talmeidas.battle.core.domains.game.model.Game;
 import io.github.talmeidas.battle.core.domains.game.model.Status;
 import io.github.talmeidas.battle.core.domains.game.xcutting.GetGameByPlayerIdAndStatusGateway;
@@ -12,6 +8,10 @@ import io.github.talmeidas.battle.core.domains.game.xcutting.GetUnansweredQuizze
 import io.github.talmeidas.battle.core.domains.movie.model.Movie;
 import io.github.talmeidas.battle.core.domains.movie.xcutting.GetAllMoviesCountGateway;
 import io.github.talmeidas.battle.core.domains.movie.xcutting.GetRandomMovieGateway;
+import io.github.talmeidas.battle.core.domains.player.model.Player;
+import io.github.talmeidas.battle.core.domains.player.usecase.RegisterPlayerCommand;
+import io.github.talmeidas.battle.core.domains.player.usecase.RegisterPlayerUseCase;
+import io.github.talmeidas.battle.core.domains.player.xcutting.GetPlayerByEmailGateway;
 import io.github.talmeidas.battle.core.domains.quiz.model.Quiz;
 import io.github.talmeidas.battle.core.exception.InvalidActionException;
 import io.github.talmeidas.battle.core.exception.NotFoundException;
@@ -20,9 +20,11 @@ import org.apache.commons.lang3.tuple.ImmutablePair;
 
 import jakarta.inject.Named;
 import java.math.BigInteger;
+import java.security.SecureRandom;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 /*
  * A Use Case follows these steps:
@@ -32,16 +34,19 @@ import java.util.Optional;
  * - Returns output
  */
 
+
 @Named
 @RequiredArgsConstructor
 public class RequestQuizUseCaseImpl implements RequestQuizUseCase {
+
+    private static final Random random = new SecureRandom();
 
     private final GetPlayerByEmailGateway getPlayerByEmailGateway;
     private final RegisterPlayerUseCase registerPlayerUseCase;
     private final GetGameByPlayerIdAndStatusGateway getGameByPlayerIdAndStatusGateway;
     private final GetUnansweredQuizzesByGateway getUnansweredQuizzesByGateway;
-    private final GetRandomMovieGateway getRandomMovieGateway;
     private final GetAllMoviesCountGateway getAllMoviesCountGateway;
+    private final GetRandomMovieGateway getRandomMovieGateway;
     private final GetAllQuizzesByGameIdGateway getAllQuizzesByGameIdGateway;
     private final GetLocalDateTime getLocalDateTime;
     private final RegisterQuizGateway registerQuizGateway;
@@ -139,7 +144,9 @@ public class RequestQuizUseCaseImpl implements RequestQuizUseCase {
     }
 
     private Movie getRandomMovie() {
-        final Optional<Movie> optional = getRandomMovieGateway.execute();
+        final long count = getAllMoviesCountGateway.execute();
+        final int index = random.nextInt((int) (count));
+        final Optional<Movie> optional = getRandomMovieGateway.execute(index);
         return optional.orElseThrow(() -> new NotFoundException("validation.movies.database.empty"));
     }
 

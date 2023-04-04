@@ -11,12 +11,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
+
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
 @Service
 public class GetUnansweredQuizzesByProvider implements GetUnansweredQuizzesByGateway {
 
-    private final QuizMapper quizMapper = Mappers.getMapper(QuizMapper.class);
+    private static final QuizMapper quizMapper = Mappers.getMapper(QuizMapper.class);
 
     private final QuizRepository quizRepository;
 
