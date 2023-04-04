@@ -147,7 +147,7 @@ public class RequestQuizUseCaseImpl implements RequestQuizUseCase {
         final long count = getAllMoviesCountGateway.execute();
         final int index = random.nextInt((int) (count));
         final Optional<Movie> optional = getRandomMovieGateway.execute(index);
-        return optional.orElseThrow(() -> new NotFoundException("validation.movies.database.empty"));
+        return optional.orElseThrow(() -> new NotFoundException("validation.movie.database.empty"));
     }
 
     private void checkIfReachedTheLimitOfLosses(final Long gameId, final List<Quiz> quizzes) {

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.Optional;
@@ -13,6 +14,7 @@ import java.util.Optional;
 
 @Primary
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 @Service
 public class GetAllMoviesCountProvider implements GetAllMoviesCountGateway {
 

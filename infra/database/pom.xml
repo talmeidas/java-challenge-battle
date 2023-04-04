@@ -24,6 +24,8 @@
         <maven-compiler-plugin>3.10.1</maven-compiler-plugin>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
         <lombok.version>1.18.26</lombok.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <spring-data-jpa-entity-graph.version>3.0.1</spring-data-jpa-entity-graph.version>
@@ -164,6 +166,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
+                <version>${maven-failsafe-plugin.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

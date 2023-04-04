@@ -5,11 +5,12 @@ import io.github.talmeidas.battle.core.domains.movie.xcutting.GetMovieByImdbIdGa
 import lombok.RequiredArgsConstructor;
 import org.mapstruct.factory.Mappers;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
-
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 @Service
 public class GetMovieByImdbIdRestClientProvider implements GetMovieByImdbIdGateway {
 
